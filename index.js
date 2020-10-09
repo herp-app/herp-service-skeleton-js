@@ -2,6 +2,7 @@ const axios = require('axios').default;
 const express = require('express');
 const bodyParser = require('body-parser');
 const Config = require('./configuration');
+const process = require('./process');
 
 
 /**
@@ -70,7 +71,7 @@ app.use(bodyParser.json());
  * This endpoint is default and called whenever a node instance of this service gets triggerd inside a workflow
  */
 app.post('/do', function (req, res) {
-    const outputField = req.body.inputField1 + " " + req.body.inputField2;
+    const outputField = process(req.body);
     res.send({outputField});
 });
 
