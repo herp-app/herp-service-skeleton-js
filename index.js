@@ -126,8 +126,9 @@ app.post('/install', function (req, res) {
     console.log("service is installed");
 
     // store credentials of created service user in config file
-    nconf.set("service:user", data.user);
-    nconf.set("service:password", data.password);
+    Config.set("user", data.user);
+    Config.set("password", data.password);
+    Config.save();
     
 
     res.send({});
