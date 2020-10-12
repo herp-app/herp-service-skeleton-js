@@ -71,8 +71,8 @@ app.use(bodyParser.json());
  * This endpoint is default and called whenever a node instance of this service gets triggerd inside a workflow
  */
 app.post('/do', function (req, res) {
-    const outputField = process(req.body);
-    res.send({outputField});
+    const output = process(req.body.data);
+    res.send(output);
 });
 
 

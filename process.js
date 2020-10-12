@@ -5,7 +5,7 @@
  
  function process(inputData) {
     const outputField = inputData.inputField1 + " " + inputData.inputField2;
-    return outputField;
+    return {outputField};
  }
 
  module.exports = process;
